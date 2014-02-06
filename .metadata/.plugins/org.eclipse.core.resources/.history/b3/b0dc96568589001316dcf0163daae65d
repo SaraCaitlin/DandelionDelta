@@ -1,0 +1,35 @@
+
+/**
+	   Allows shapes to be created
+	 */
+	import javax.swing.JComponent;
+	import java.awt.Graphics;
+	import java.awt.Graphics2D;
+	import java.awt.Rectangle;
+	import java.awt.geom.Ellipse2D;
+	/**
+	   Draws a die using the framework of JComponent.
+	 */
+public class MyFace extends JComponent
+	{
+	/**
+	Instance Variables 
+	*/
+	public int rollCount;
+	public int rollOnTable;
+	
+		//Method that draws the die
+	    public void paintComponent(Graphics g)
+	   {
+	        //a cast to recover Graphics2D
+	    	Graphics2D g2 = (Graphics2D) g;
+	        
+	    	//creates a square named die
+	    	Rectangle die = new Rectangle(5, 5, 25, 25);
+	        g2.draw(die);
+	        
+	        //creates a circle named dot
+	        Ellipse2D.Double dot = new Ellipse2D.Double(13, 13, 4, 4);
+	        g2.draw(dot);
+	   }
+}

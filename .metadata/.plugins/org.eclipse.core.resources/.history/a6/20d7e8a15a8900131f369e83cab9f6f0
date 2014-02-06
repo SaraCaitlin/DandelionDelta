@@ -1,0 +1,15 @@
+
+public class BugTester {
+	public static void main(String[] args){
+	
+		Bug bugsy = new Bug();
+	
+		bugsy.move();
+		bugsy.move();
+		bugsy.turn();
+		System.out.println(bugsy.getPosition());
+		System.out.println("Expected: 12");
+	
+	}
+}
+	

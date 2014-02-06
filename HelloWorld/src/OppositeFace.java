@@ -1,0 +1,134 @@
+/**
+	   Allows access to certain Java templates
+	   	 */
+	import javax.swing.JComponent;
+	//import javax.swing.JFrame; //This line of text is active in my printout, however it is not necessary 
+	import java.awt.Graphics;
+	import java.awt.Graphics2D;
+	import java.awt.Rectangle;
+	import java.awt.geom.Ellipse2D;
+	import java.awt.Color;
+	
+	/**
+	   Draws an opposite die by expanding upon JComponent.
+	   @param diecolor the number corresponding with the solid color of oppositeDie
+	   @param dotcolor the number corresponding with the solid color of dots on oppositeDie
+	   @param diespecs the (x1,y1,x2,y2) coordinates of the oppositeDie
+	 */
+public class OppositeFace extends JComponent {
+		
+		private static final long serialVersionUID = 1L; //this line was suggested by Eclipse. Even though it was not active in my printout, the program was functional and still is
+	
+		//Instance variables
+		public int diecolor;
+		public int dotcolor;
+		private String diespecs; //cannot be changed by user
+		
+		OppositeFace(){ //Default constructor
+			diecolor = 0;
+		    dotcolor = 0;
+		    diespecs = "Rectangle(45, 5, 25, 25)";
+		}
+		
+		OppositeFace(int i, int t){ //User input constructor
+			diecolor = i;
+			dotcolor = t;
+			diespecs = "Rectangle(45, 5, 25, 25)";
+		}
+		
+			/**
+			 * Method that draws the die
+			 * @param oppositeDie Rectangle Object to form outside of die
+			 * @param dot1 Ellipse Object to help form number symbol on die
+			 * @param dot2 Ellipse Object to help form number symbol on die
+			 * @param dot3 Ellipse Object to help form number symbol on die
+			 * @param dot4 Ellipse Object to help form number symbol on die
+			 * @param dot5 Ellipse Object to help form number symbol on die
+			 * @param dot6 Ellipse Object to help form number symbol on die
+			 */
+		    public void paintComponent(Graphics g)
+		   {
+		    	
+		    	Graphics2D g2 = (Graphics2D) g; //a cast to recover Graphics2D... The book said I needed it.
+		        
+		    	
+		    	Rectangle oppositeDie = new Rectangle(45, 5, 25, 25); //creates a square named oppositeDie
+		    	if (diecolor == 0)//Default color for oppositeDie is black filled
+		    		g2.setColor(Color.DARK_GRAY);
+		    		g2.fill(oppositeDie);
+		    	if (diecolor > 0)
+		    		g2.setColor(Color.ORANGE);//With user input oppositeDie is orange filled
+		    		g2.fill(oppositeDie);
+		    	g2.draw(oppositeDie);
+		        
+		        
+		        Ellipse2D.Double dot1 = new Ellipse2D.Double(50, 8, 4, 4); //creates a circle named dot1
+		        if (dotcolor == 0)//Default color for dot1 through dot6 is white filled
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot1);
+		        if (dotcolor > 0)//With user input dot1 through dot6 is yellow filled
+		        	g2.setColor(Color.YELLOW);
+		        	g2.fill(dot1);
+		        g2.draw(dot1);
+		        
+		      //creates a circle named dot2
+		        Ellipse2D.Double dot2 = new Ellipse2D.Double(60, 8, 4, 4);//creates a circle named dot2
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot2);
+		        if (dotcolor > 0)
+		        	g2.setColor(Color.YELLOW);
+		        	g2.fill(dot2);
+		        g2.draw(dot2);
+		        
+		      //creates a circle named dot3
+		        Ellipse2D.Double dot3 = new Ellipse2D.Double(50, 15, 4, 4);//creates a circle named dot3
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot3);
+		        if (dotcolor > 0)
+				    g2.setColor(Color.YELLOW);
+				    g2.fill(dot3);	
+		        g2.draw(dot3);
+		        
+		      //creates a circle named dot4
+		        Ellipse2D.Double dot4 = new Ellipse2D.Double(60, 15, 4, 4);//creates a circle named dot4
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot4);
+		        if (dotcolor > 0)
+				    g2.setColor(Color.YELLOW);
+				    g2.fill(dot4);
+		        g2.draw(dot4);
+		        
+		      //creates a circle named dot5
+		        Ellipse2D.Double dot5 = new Ellipse2D.Double(50, 22, 4, 4);//creates a circle named dot5
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot5);
+		        if (dotcolor > 0)
+				    g2.setColor(Color.YELLOW);
+				    g2.fill(dot5);
+		        g2.draw(dot5);
+		        
+		      //creates a circle named dot6
+		        Ellipse2D.Double dot6 = new Ellipse2D.Double(60, 22, 4, 4);//creates a circle named dot6
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot6);
+		        if (dotcolor > 0)
+				    g2.setColor(Color.YELLOW);
+				    g2.fill(dot6);
+				g2.draw(dot6);
+		   }
+		    /**
+		     * Defines the meaning of toString() rather than using the built in function
+		     * @param dieplacement a string made by combining two other strings to provide the private location of the Oppositedie
+		     * @return string 
+		     */
+		    	public String toString(){
+		    		
+		    		String diePlacement = "OppositeFace die " + diespecs;  
+		    		return diePlacement;
+		    }
+}

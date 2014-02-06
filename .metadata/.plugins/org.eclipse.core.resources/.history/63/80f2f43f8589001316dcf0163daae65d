@@ -1,0 +1,28 @@
+/**
+ template for frame
+ */
+import javax.swing.JFrame;
+/**
+ * FaceTester
+ * @author szn2385
+ * CS220 Java
+ * Lab 1
+ */
+public class FaceTester {
+    //Method that constructs the frame
+	public static void main(String[] args)
+	{
+		/**
+		 * Declares the dimensions the frame which has been named table
+		 */
+		JFrame table = new JFrame();
+		
+		table.setSize(200, 200);
+		table.setTitle("Luck of the Roll");
+		table.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		
+	}
+	
+}

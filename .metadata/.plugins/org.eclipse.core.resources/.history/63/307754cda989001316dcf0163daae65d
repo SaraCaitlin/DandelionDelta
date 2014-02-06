@@ -1,0 +1,117 @@
+/**
+	   Allows shapes to be created
+	 */
+	import javax.swing.JComponent;
+import javax.swing.JFrame;
+
+	import java.awt.Graphics;
+	import java.awt.Graphics2D;
+	import java.awt.Rectangle;
+	import java.awt.geom.Ellipse2D;
+import java.awt.Color;
+	/**
+	   Draws a die using the framework of JComponent.
+	 */
+
+public class OppositeFace extends JComponent {
+		/**
+		Instance Variables 
+		*/
+		public int diecolor;
+		public int dotcolor;
+		
+		/**
+		 Constructors
+		 */
+		
+		OppositeFace(){
+			diecolor = 0;
+		    dotcolor = 0;
+		}
+		
+		OppositeFace(int i, int t){
+			diecolor = i;
+			dotcolor = t;
+		}
+		
+			//Method that draws the die
+		    public void paintComponent(Graphics g)
+		   {
+		    	//a cast to recover Graphics2D
+		    	Graphics2D g2 = (Graphics2D) g;
+		        
+		    	//creates a square named oppositeDie
+		    	Rectangle oppositeDie = new Rectangle(45, 5, 25, 25);
+		    	if (diecolor == 0)
+		    		g2.setColor(Color.DARK_GRAY);
+		    		g2.fill(oppositeDie);
+		    	if (diecolor > 0)
+		    		g2.setColor(Color.ORANGE);
+		    		g2.fill(oppositeDie);
+		    	g2.draw(oppositeDie);
+		        
+		        //creates a circle named dot1
+		        Ellipse2D.Double dot1 = new Ellipse2D.Double(50, 8, 4, 4);
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot1);
+		        if (dotcolor > 0)
+		        	g2.setColor(Color.YELLOW);
+		        	g2.fill(dot1);
+		        g2.draw(dot1);
+		        
+		      //creates a circle named dot2
+		        Ellipse2D.Double dot2 = new Ellipse2D.Double(60, 8, 4, 4);
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot2);
+		        if (dotcolor > 0)
+		        	g2.setColor(Color.YELLOW);
+		        	g2.fill(dot2);
+		        g2.draw(dot2);
+		        
+		      //creates a circle named dot3
+		        Ellipse2D.Double dot3 = new Ellipse2D.Double(50, 15, 4, 4);
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot3);
+		        if (dotcolor > 0)
+				    g2.setColor(Color.YELLOW);
+				    g2.fill(dot3);	
+		        g2.draw(dot3);
+		        
+		      //creates a circle named dot4
+		        Ellipse2D.Double dot4 = new Ellipse2D.Double(60, 15, 4, 4);
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot4);
+		        if (dotcolor > 0)
+				    g2.setColor(Color.YELLOW);
+				    g2.fill(dot4);
+		        g2.draw(dot4);
+		        
+		      //creates a circle named dot5
+		        Ellipse2D.Double dot5 = new Ellipse2D.Double(50, 22, 4, 4);
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot5);
+		        if (dotcolor > 0)
+				    g2.setColor(Color.YELLOW);
+				    g2.fill(dot5);
+		        g2.draw(dot5);
+		        
+		      //creates a circle named dot6
+		        Ellipse2D.Double dot6 = new Ellipse2D.Double(60, 22, 4, 4);
+		        if (dotcolor == 0)
+		        	g2.setColor(Color.WHITE);
+		        	g2.fill(dot6);
+		        if (dotcolor > 0)
+				    g2.setColor(Color.YELLOW);
+				    g2.fill(dot6);
+				g2.draw(dot6);
+		   }
+		    public String toString(){
+		    	String diePlacement = "die color" + diecolor; 
+		    	return diePlacement;
+		    }
+}

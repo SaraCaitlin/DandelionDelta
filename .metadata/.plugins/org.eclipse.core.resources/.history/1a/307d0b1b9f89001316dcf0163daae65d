@@ -1,0 +1,43 @@
+
+public class New {
+	 // Instance Variables
+
+    ...
+    
+    /**
+     * Constructs a face object
+     */
+    public MyFace()
+    {
+        ...
+    }
+    
+    /**
+     * Constructs a face object with given top, left, size coordinates
+     */
+    public MyFace(int x, int y)
+    {
+        ...
+    }
+
+    /**
+     * Returns a String representing this MyFace object and its values.
+     * @return a String representing this MyFace object's coordinate and size values.
+     */
+    public String toString()
+    {
+        ...
+    }
+
+    /**
+     * Paints the actual picture
+     * @param g The graphics object to be drawn on
+     */
+    public void paint(Graphics g)
+    {
+        // Recover the graphics context
+        Graphics2D g2 = (Graphics2D) g;
+
+        ...
+    }
+}
